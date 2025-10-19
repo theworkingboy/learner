@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Professional Ethical Hacker — Complete Tutorial</title>
+
+<style>
+  /* Internal CSS - clean printable layout */
+  :root{
+    --bg:#0f1724; --card:#0b1220; --accent:#2dd4bf;
+    --muted:#94a3b8; --text:#e6eef6; --paper:#ffffff;
+  }
+  html,body{height:100%;}
+  body{
+    font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    margin:0; background:linear-gradient(180deg,var(--bg),#071126 60%);
+    color:var(--text); line-height:1.5; padding:28px;
+  }
+  .container{
+    max-width:900px; margin:0 auto; background:linear-gradient(180deg,#071226, #07112a);
+    border-radius:10px; padding:28px; box-shadow:0 10px 30px rgba(2,6,23,0.6);
+  }
+  header{display:flex; align-items:center; gap:18px; margin-bottom:18px;}
+  header h1{font-size:1.6rem; margin:0;}
+  header p{margin:0; color:var(--muted); font-size:0.9rem}
+  .toc{background:linear-gradient(180deg,#071a2b,#05101a); padding:12px; border-radius:8px; margin-bottom:18px}
+  .toc h2{margin:0 0 6px 0; font-size:1.05rem}
+  .toc ul{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px}
+  .toc a{color:var(--accent); text-decoration:none; font-size:0.95rem; background:rgba(45,212,191,0.06); padding:6px 8px; border-radius:6px}
+  section.card{background:rgba(255,255,255,0.02); padding:18px; border-radius:10px; margin:14px 0; box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+  section.card h3{margin-top:0;}
+  .muted{color:var(--muted); font-size:0.95rem}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .list{padding-left:18px}
+  footer{margin-top:18px; color:var(--muted); font-size:0.85rem}
+  /* Print-friendly tweaks */
+  @media print{
+    body{background:white; color:black; padding:12mm}
+    .container{background:white; box-shadow:none; padding:0}
+    .toc a{color:blue}
+  }
+  /* small screens */
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr}
+    header{flex-direction:column; align-items:flex-start}
+  }
+
+  /* simple JS-driven collapsible */
+  .collapsible{cursor:pointer; padding:8px 10px; background:transparent; border:1px dashed rgba(255,255,255,0.04); border-radius:6px; display:flex; justify-content:space-between; align-items:center}
+  .content-hidden{display:none}
+  .badge{background:var(--accent); color:#022; padding:4px 8px; border-radius:999px; font-weight:600; font-size:0.85rem}
+</style>
+
+</head>
+<body>
+  <div class="container" id="root">
+    <header>
+      <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#022;font-weight:700;font-size:1.25rem">EH</div>
+      <div>
+        <h1>Professional Ethical Hacker — Complete Tutorial</h1>
+        <p class="muted">A lawful, career-focused roadmap with hands-on practice recommendations, defensive skills, certifications, and reporting — designed for responsible learning.</p>
+      </div>
+    </header>
+
+    <div class="toc" role="navigation" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#intro">Introduction & Ethics</a></li>
+        <li><a href="#skills">Foundational Skills</a></li>
+        <li><a href="#learning-path">Learning Path & Timeline</a></li>
+        <li><a href="#labs">Safe Labs & Platforms</a></li>
+        <li><a href="#tools">Tools Overview (Non-actionable)</a></li>
+        <li><a href="#methodology">Testing Methodology & Reporting</a></li>
+        <li><a href="#career">Certifications & Career</a></li>
+        <li><a href="#projects">Sample Projects & Portfolio</a></li>
+        <li><a href="#resources">Further Resources</a></li>
+      </ul>
+    </div>
+
+    <section id="intro" class="card">
+      <h3>1. Introduction — What is Ethical Hacking?</h3>
+      <p class="muted">Ethical hacking (a.k.a. penetration testing or red teaming when done professionally) is the practice of proactively testing systems, applications, and networks to find security weaknesses — only with clear authorization and the intent to improve security.</p>
+      <ul class="list">
+        <li><strong>Core principle:</strong> Do not access, test, or scan systems without explicit written permission from the system owner.</li>
+        <li><strong>Goal:</strong> Improve security posture, help owners fix vulnerabilities, and reduce risk to users and organizations.</li>
+        <li><strong>Legal & ethical baseline:</strong> follow laws, contractual rules, and disclosure policies; get written authorization; prioritize safety and data protection.</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="card">
+      <h3>2. Foundational Skills (what you must know)</h3>
+      <div class="grid">
+        <div>
+          <h4>Technical foundations</h4>
+          <ul class="list">
+            <li><strong>Operating systems:</strong> Linux (especially Debian/Ubuntu), Windows internals.</li>
+            <li><strong>Networking:</strong> OSI model, TCP/IP, routing, DNS, DHCP, VPNs, TLS — conceptual mastery.</li>
+            <li><strong>Programming & scripting:</strong> Python and Bash/PowerShell for automation and tooling; comfortable reading code.</li>
+            <li><strong>Web fundamentals:</strong> HTML, CSS, JavaScript, HTTP(S), cookies, sessions, CORS, modern web app architecture.</li>
+            <li><strong>Databases:</strong> SQL basics, secure queries, and how data is stored/retrieved.</li>
+            <li><strong>Security concepts:</strong> authentication, authorization, encryption, hashing, secure SDLC, threat modeling.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Soft & professional skills</h4>
+          <ul class="list">
+            <li>Written & verbal reporting — clear remediation steps and risk summaries.</li>
+            <li>Legal literacy — understanding contracts, NDAs, and disclosure timelines.</li>
+            <li>Project management and teamwork — coordinate with blue teams and stakeholders.</li>
+            <li>Curiosity, meticulousness, and responsible disclosure mindset.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning-path" class="card">
+      <h3>3. Practical Learning Path & Suggested Timeline</h3>
+      <p class="muted">A suggested 12–18 month progression from zero to job-ready (self-paced — adjust to your schedule).</p>
+      <ol class="list">
+        <li><strong>Months 0–2 — Fundamentals:</strong> Learn Linux basics, networking fundamentals, and one programming language (Python recommended).</li>
+        <li><strong>Months 3–5 — Web & app security concepts:</strong> Understand HTTP, sessions, common web vulnerabilities conceptually, and secure coding basics.</li>
+        <li><strong>Months 6–9 — Lab practice & Blue Team basics:</strong> Build a home lab. Practice defense: logging, monitoring, incident response concepts. Start CTF warm-ups on authorized platforms.</li>
+        <li><strong>Months 10–12 — Advanced topics & certifications:</strong> Study for a certification (e.g., OSCP/CEH depending on goals), engage in mock engagements, and build a portfolio.</li>
+        <li><strong>Months 12+ — Specialization:</strong> Cloud security, mobile security, IoT, embedded systems, or red/blue team roles.</li>
+      </ol>
+    </section>
+
+    <section id="labs" class="card">
+      <h3>4. Safe Labs & Platforms (practice legally)</h3>
+      <p class="muted">Always use authorized, purpose-built environments for hands-on practice.</p>
+      <ul class="list">
+        <li><strong>Use isolated labs:</strong> Virtual machines (VirtualBox/VMware) or cloud lab accounts configured by you, on networks you control.</li>
+        <li><strong>Authorized practice platforms:</strong> TryHackMe, Hack The Box (for authorized CTFs and lab boxes), OWASP Juice Shop, and VulnHub—all intended for education.</li>
+        <li><strong>Capture the Flag (CTF):</strong> Great for learning problem-solving without violating laws. Join beginner-friendly CTFs and community teams.</li>
+        <li><strong>Bug bounty programs:</strong> Only participate in programs with clear scope and explicit permission (HackerOne, Bugcrowd) — read program rules carefully.</li>
+      </ul>
+    </section>
+
+    <section id="tools" class="card">
+      <h3>5. Tools Overview — What professionals use (non-actionable)</h3>
+      <p class="muted">Below are categories and common examples. This list describes purpose only — do not use tools against systems without authorization.</p>
+      <div class="grid">
+        <div>
+          <h4>Recon & discovery</h4>
+          <p class="muted">Purpose: map assets, enumerate services to understand scope.</p>
+          <ul class="list">
+            <li>Network scanners & inventory tools (purpose: visibility)</li>
+            <li>OSINT tools (for authorized threat intelligence gathering)</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Analysis & monitoring</h4>
+          <p class="muted">Purpose: monitor network traffic and logs — important for defenders.</p>
+          <ul class="list">
+            <li>Packet analysis and SIEMs — to investigate incidents and detect anomalies.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted">Note: tools are powerful — learn them in a lab and use them only where permitted. A professional also masters defensive counterparts and monitoring to understand detection.</p>
+    </section>
+
+    <section id="methodology" class="card">
+      <h3>6. Ethical Testing Methodology & Reporting</h3>
+      <p class="muted">A professional process prioritizes safety, repeatability, and clear communication.</p>
+      <h4>Engagement phases</h4>
+      <ol class="list">
+        <li><strong>Pre-engagement:</strong> Obtain written scope and authorization, define deliverables, rules of engagement, and emergency contacts.</li>
+        <li><strong>Recon & mapping:</strong> Non-invasive discovery to document assets within scope.</li>
+        <li><strong>Testing (authorized):</strong> Use approved methods to validate controls — always document steps and evidence.</li>
+        <li><strong>Analysis & remediation recommendations:</strong> Prioritize findings by risk and provide actionable fixes.</li>
+        <li><strong>Reporting:</strong> Produce executive summary, technical details, proof-of-concept (where allowed), and remediation steps. Include reproducible test steps but avoid including sensitive exploits that could be misused outside the remediation context.</li>
+        <li><strong>Retest & closure:</strong> Verify fixes and close the engagement.</li>
+      </ol>
+
+      <h4>Writing high-quality reports</h4>
+      <ul class="list">
+        <li>Start with an executive summary for non-technical stakeholders.</li>
+        <li>Provide severity ratings and business impact clearly (e.g., CVSS as a reference).</li>
+        <li>Include reproductions and remediation guidance, prioritized by risk.</li>
+        <li>Deliver artifacts securely (encrypted files, approved channels).</li>
+      </ul>
+    </section>
+
+    <section id="career" class="card">
+      <h3>7. Certifications, Jobs & Career Advice</h3>
+      <div class="grid">
+        <div>
+          <h4>Certifications (common paths)</h4>
+          <ul class="list">
+            <li><strong>Entry / fundamentals:</strong> CompTIA Security+, Cisco CCNA (security fundamentals)</li>
+            <li><strong>Pen-testing focused:</strong> OSCP (practical), eJPT, eCPPT</li>
+            <li><strong>Enterprise & governance:</strong> CISSP (broad security leadership)</li>
+            <li><strong>Specialist:</strong> Cloud certs (AWS/GCP/Azure security), mobile & IoT-focused certs</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Job roles & progression</h4>
+          <ul class="list">
+            <li>Junior Security Analyst → Penetration Tester → Senior Pentester / Red Team</li>
+            <li>Blue team roles: SOC analyst, Incident Responder — excellent for career breadth.</li>
+            <li>Later: Security Architect, CISO, or specialist consultant roles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Tips to stand out</h4>
+      <ul class="list">
+        <li>Document projects: write blog posts, create sanitized write-ups of CTFs, and publish tools responsibly on GitHub (avoid publishing exploit code that could be misused).</li>
+        <li>Contribute to open source security projects or defensive tooling.</li>
+        <li>Network in community: conferences, local meetups, CTF teams, or volunteering for security reviews.</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="card">
+      <h3>8. Sample Projects & Portfolio Ideas (legal & educational)</h3>
+      <ul class="list">
+        <li>Build and document a home lab: multiple VMs, web app intentionally vulnerable for training (OWASP Juice Shop), and demonstrate secure hardening steps.</li>
+        <li>Write a detailed post on how you detected and mitigated a simulated incident in your lab (logs, timeline, remediation).</li>
+        <li>Create a small defensive tool (log parser, anomaly detector) and show how it helps defenders.</li>
+        <li>Participate in CTFs and publish high-level writeups (no raw exploit code for targets outside scope).</li>
+      </ul>
+    </section>
+
+    <section id="resources" class="card">
+      <h3>9. Recommended Resources</h3>
+      <div class="grid">
+        <div>
+          <h4>Books & references</h4>
+          <ul class="list">
+            <li>“The Web Application Hacker's Handbook” — read for concepts but focus on defensive remediation.</li>
+            <li>OWASP Top Ten — study vulnerabilities and secure coding practices.</li>
+            <li>“Linux Basics for Hackers” — practice admin tasks and scripting in safe labs.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Platforms & communities</h4>
+          <ul class="list">
+            <li>TryHackMe, Hack The Box, VulnHub</li>
+            <li>OWASP chapters, local InfoSec meetups, security-focused Discord/Slack communities</li>
+            <li>Bug bounty platforms with clear scopes: HackerOne, Bugcrowd (only when following their rules)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Study & note-taking</h4>
+      <p class="muted">Keep a personal knowledge base (notes, scripts, playbooks). Track what you learn, evidence collection practice in lab environments, and remediation examples.</p>
+    </section>
+
+    <section class="card">
+      <h3>10. Ethics & Legal Checklist (must follow)</h3>
+      <ul class="list">
+        <li>Always get <strong>written authorization</strong> before testing any system.</li>
+        <li>Work within the defined scope and respect third-party data and privacy.</li>
+        <li>Use encrypted channels to share sensitive findings and follow responsible disclosure timelines.</li>
+        <li>Do not publish exploit code for active production vulnerabilities without coordinated disclosure.</li>
+      </ul>
+      <div class="collapsible" id="collapsible-sample" onclick="toggleCollapsible('content-sample')">
+        <div><strong>Quick printable checklist</strong></div><div class="badge">Show</div>
+      </div>
+      <div id="content-sample" class="content-hidden" style="margin-top:10px;">
+        <ol class="list">
+          <li>Get engagement letter & scope</li>
+          <li>Confirm allowed testing windows & contacts</li>
+          <li>Document all actions and evidence</li>
+          <li>Report critically-severe issues immediately via agreed channel</li>
+          <li>Provide remediation guidance and retest</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <p class="muted">This tutorial focuses on lawful, ethical, and defensive knowledge. It intentionally avoids step-by-step instructions for unauthorized intrusion or exploit development. For hands-on practice, use only the authorized labs and platforms listed above.</p>
+      <p style="margin-top:8px">How to save as PDF: After opening this file in your browser, choose <em>File → Print</em> (or Ctrl/Cmd+P) and select <strong>Save as PDF</strong>. Ensure background graphics are enabled if you want the colors to appear.</p>
+      <p style="margin-top:6px; color:var(--muted)">Prepared for you — learn responsibly.</p>
+    </footer>
+  </div>
+
+<script>
+  // Small JS for interactivity — toggles collapsibles and updates badge text
+  function toggleCollapsible(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    const parent = el.previousElementSibling;
+    el.classList.toggle('content-hidden');
+    if(parent){
+      const badge = parent.querySelector('.badge');
+      if(badge) badge.textContent = el.classList.contains('content-hidden') ? 'Show' : 'Hide';
+    }
+  }
+
+  // Smooth in-page navigation for TOC links (works when printing to PDF too)
+  document.querySelectorAll('.toc a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+
+  // Accessibility helper: enable keyboard toggle on collapsible
+  document.querySelectorAll('.collapsible').forEach(btn=>{
+    btn.setAttribute('tabindex','0');
+    btn.addEventListener('keypress', (e)=>{
+      if(e.key === 'Enter' || e.key === ' ') btn.click();
+    });
+  });
+</script>
+
+</body>
+</html>
